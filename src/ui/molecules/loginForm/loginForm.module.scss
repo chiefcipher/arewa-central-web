@@ -1,0 +1,149 @@
+@import "../../../scss/variables";
+.loginForm {
+  font-family: $f-inter;
+  padding: 0 5%;
+
+  .header {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+
+    & > a {
+      display: flex;
+      column-gap: 0.5rem;
+      span {
+        color: $c-primary-blue;
+        font-weight: 500;
+      }
+      &:focus span {
+        color: rgba($color: $c-primary-blue, $alpha: 0.67);
+      }
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    & > p {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    span {
+      color: #8692a6;
+      font-size: 1.3rem;
+      &:nth-of-type(2) {
+        font-weight: 500;
+        line-height: 1.9rem;
+      }
+    }
+    a {
+      color: $c-primary-blue;
+    }
+  }
+
+  .prompt {
+    margin: 12rem 0 4rem 0;
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.6rem;
+      color: #8692a6;
+      line-height: 1.4;
+      max-width: 30rem;
+    }
+  }
+
+  .formArea {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    p {
+      display: flex;
+      flex-direction: column;
+
+      font-family: $f-inter;
+      &.passwordField {
+        position: relative;
+        button {
+          position: absolute;
+          top: 50%;
+          right: 1rem;
+          transform: translateY(-60%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.5rem;
+          &:focus {
+            opacity: 0.5;
+            border: 1px solid $c-primary-blue;
+          }
+          img {
+            width: 2rem;
+            height: 2rem;
+
+            cursor: pointer;
+          }
+        }
+      }
+
+      label {
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: #696f79;
+        margin-bottom: 1rem;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        border: 1px solid hsla(215, 82%, 46%, 0.366);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.45rem;
+        box-shadow: 0 0 1px #696f79;
+        font-family: inherit;
+
+        &:focus {
+          border-color: rgba(0, 0, 0, 0.689);
+        }
+      }
+
+      & > span {
+        margin-bottom: 3rem;
+        margin-top: 5px;
+        color: red;
+      }
+    }
+    button[type="submit"] {
+      background: $c-primary-blue;
+      color: #fff;
+      display: flex;
+      column-gap: 1rem;
+      align-items: center;
+      font-family: $f-inter;
+      font-size: 1.6rem;
+      border-radius: 1.2rem;
+      padding: 1rem 12rem;
+      margin: 2rem auto;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      border: 1px solid $c-primary-blue;
+      &:focus {
+        background: transparent;
+        color: $c-primary-blue;
+      }
+
+      &:hover {
+        transform: translateY(-2px) scale(1.01);
+      }
+      &:active {
+        transform: translateY(-1px) scale(1.009);
+      }
+    }
+  }
+}
