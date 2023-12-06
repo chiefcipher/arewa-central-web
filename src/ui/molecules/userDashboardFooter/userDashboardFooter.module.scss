@@ -1,0 +1,45 @@
+@import "../../../scss/variables";
+.footer {
+  background: #000000;
+  color: #fff;
+  font-family: $f-inter;
+  padding: 4rem 5%;
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    div {
+      width: 20rem;
+      display: flex;
+      flex-direction: column;
+      a {
+        font-size: 1.2rem;
+        padding: 0.44rem 0;
+        font-weight: 500;
+        &:hover {
+          color: $c-primary-blue;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      display: flex;
+      column-gap: 2rem;
+      align-items: center;
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

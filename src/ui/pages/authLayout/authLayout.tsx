@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./authLayout.module.scss";
 import LeftSideImg from "./leftSideImg.svg";
-import { ArewaCentralPNG, ArewaCentralWEBP } from "../../../shared";
+import { ArewaCentralPNG, ArewaCentralWEBP } from "../../../shared/assets";
 import { Outlet } from "react-router-dom";
 /* layout component for signup and login pages */
 export function AuthLayout() {

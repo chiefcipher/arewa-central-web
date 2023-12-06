@@ -1,0 +1,118 @@
+@import "../../../scss/variables";
+.nav {
+  background: $c-primary-blue;
+  background: #fff;
+  // color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  font-family: $f-inter;
+  box-shadow: 0 1px 2px rgba($c-cool-gray, 0.2);
+
+  .nav__logo {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      img {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      h2 {
+        color: #3e3e3e;
+
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        &:hover {
+          color: $c-darker-blue;
+        }
+      }
+    }
+  }
+
+  .nav__searchArea {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    font-family: $f-inter;
+
+    p {
+      overflow: hidden;
+      position: relative;
+      color: #303030;
+      width: 36rem;
+      border-radius: 0.4rem;
+      background: #e7e7e7;
+      display: flex;
+      border: 1px solid #e7e7e7;
+      &:focus-within {
+        border-color: #a6a6a6;
+        background: hsl(0, 0%, 97%);
+      }
+      input {
+        width: 100%;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        padding-left: 3.4rem; //normal 1rem and then width of img 1.4rem and then width of padding left of image 1rem
+        &:focus {
+          background: hsl(0, 0%, 97%);
+        }
+      }
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        color: #a6a6a6;
+      }
+      button {
+        background-color: $c-primary-blue;
+        margin-left: auto;
+        padding: 0.8rem 1.4rem;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        &:focus,
+        &:hover {
+          background-color: transparent;
+          color: $c-primary-blue;
+          border-left: 1px solid #a6a6a6;
+        }
+      }
+    }
+  }
+
+  .nav__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    button {
+      cursor: pointer;
+
+      display: flex;
+      gap: 0.5rem;
+      border-radius: 0.4rem;
+
+      background: transparent;
+      font-family: $f-inter;
+      font-size: 1.4rem;
+      align-items: center;
+      color: #303030;
+      font-weight: 500;
+
+      &:hover,
+      &:focus {
+        color: $c-darker-blue;
+      }
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+}

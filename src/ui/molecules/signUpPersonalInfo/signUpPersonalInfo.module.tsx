@@ -7,7 +7,11 @@ import { Formik, Form } from "formik";
 import { AsyncButton } from "../../atoms/asyncButton/asyncButton";
 import { signUpPersonalInfoSchema } from "../../../validations/auth";
 
-import { LeftArrowSvg, OpenEyeIcon, ClosedEyeIcon } from "../../../shared";
+import {
+  LeftArrowSvg,
+  OpenEyeIcon,
+  ClosedEyeIcon,
+} from "../../../shared/assets";
 
 export function SignUpPersonalInfo() {
   const [viewPassword, setViewPassword] = useState<boolean>(false);

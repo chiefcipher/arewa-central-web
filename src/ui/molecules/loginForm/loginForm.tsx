@@ -11,7 +11,7 @@ import {
   OpenEyeIcon,
   ClosedEyeIcon,
   ForgotPasswordIcon,
-} from "../../../shared";
+} from "../../../shared/assets";
 
 export function LoginForm() {
   const [viewPassword, setViewPassword] = useState<boolean>(false);
@@ -23,7 +23,7 @@ export function LoginForm() {
 
       actions.setSubmitting(false);
 
-      navigate(E_pages.dashboard);
+      // navigate(E_pages.dashboard);
     }, 3000);
   };
   return (

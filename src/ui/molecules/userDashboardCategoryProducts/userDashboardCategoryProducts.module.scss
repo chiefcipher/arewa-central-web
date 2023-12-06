@@ -1,0 +1,44 @@
+@import "../../../scss/variables";
+
+.products {
+  padding: 4rem 5%;
+
+  .header {
+    color: $c-darkest-blue;
+    font-size: 1.56rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+    position: relative;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    &::after {
+      transition: all 0.2s linear;
+      background-color: $c-darkest-blue;
+      display: block;
+      content: "";
+      width: 2px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    &::before {
+      transition: all 0.2s linear;
+      background-color: $c-darkest-blue;
+      display: block;
+      content: "";
+      width: 2rem;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+}

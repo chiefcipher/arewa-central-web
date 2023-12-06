@@ -7,7 +7,7 @@ import { Formik, Form } from "formik";
 import { AsyncButton } from "../../atoms/asyncButton/asyncButton";
 import { forgotPasswordSchema } from "../../../validations/auth";
 
-import { ForgotPasswordIcon } from "../../../shared";
+import { ForgotPasswordIcon } from "../../../shared/assets";
 
 export function ForgotPasswordForm() {
   const [successPasswordResetRequest, setSuccessPasswordResetRequest] =

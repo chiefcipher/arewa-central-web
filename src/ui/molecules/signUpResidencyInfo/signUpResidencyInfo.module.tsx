@@ -7,7 +7,7 @@ import { Formik, Form } from "formik";
 import { AsyncButton } from "../../atoms/asyncButton/asyncButton";
 import { signUpResidencyInfoSchema } from "../../../validations/auth";
 
-import { LeftArrowSvg } from "../../../shared";
+import { LeftArrowSvg } from "../../../shared/assets";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import countries from "../../../shared/countries";

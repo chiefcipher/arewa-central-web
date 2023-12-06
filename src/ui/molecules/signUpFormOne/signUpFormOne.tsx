@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { E_pages } from "../../../typescript/enums";
 import UserImg from "./user.svg";
 import BusinessImg from "./brief-case.svg";
-import { RightArrowSvg } from "../../../shared";
+import { RightArrowSvg } from "../../../shared/assets";
 import { SignUpContext } from "../../pages/signUp/signUpContext";
 export function SignUpFormOne() {
   const { signUpData, setSignUpData } = useContext(SignUpContext);
