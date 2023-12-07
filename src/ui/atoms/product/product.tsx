@@ -52,6 +52,11 @@ export const Product = ({
           <span>({ratingsNumber})</span>
         </p>
       </Link>
+
+      {/*
+      
+      
+      TODO might add this feature late on to enable me add item to cart without going to product detailed page 
       <button
         className={`${styles.cartBtn} ${
           isAddingToCart ? styles.isAddingToCart : ""
@@ -65,7 +70,7 @@ export const Product = ({
         ) : (
           <CartIcon />
         )}
-      </button>
+      </button> */}
     </div>
   );
 };

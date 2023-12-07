@@ -12,4 +12,10 @@ export interface I_Product {
   shortDescription: string;
   brand?: string;
   model?: string;
+  description: string;
+}
+
+export interface I_FormMessage {
+  type: "success" | "error" | "";
+  content: string;
 }

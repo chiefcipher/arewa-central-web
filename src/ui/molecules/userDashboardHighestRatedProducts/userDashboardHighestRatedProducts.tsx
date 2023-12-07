@@ -3,21 +3,12 @@ import styles from "./userDashboardHighestRatedProducts.module.scss";
 import { Product } from "../../atoms/product/product";
 import { I_Product } from "../../../typescript/interfaces";
 import { SampleProductImage } from "../../../shared/assets";
-const sampleProductData: I_Product = {
-  ratingsAverage: 4.6,
-  ratingsNumber: 2000,
-  price: 400,
-  colors: ["red", "green", "blue"],
-  name: "Nike sweater and cap",
-  category: "clothes",
-  imgUrl: SampleProductImage,
-  shortDescription: "A cool cap and sweater for the summer",
-  slug: "nike-sweater-and-cap",
-};
+import { sampleProduct } from "../../../shared/sampleProduct";
+
 export function UserDashboardHighestRatedProducts() {
   const sampleProducts: Array<I_Product> = Array.from({ length: 12 }).map(
     (data, i) => ({
-      ...sampleProductData,
+      ...sampleProduct,
       discountedPrice: i % 2 ? 200 : undefined,
     })
   );
