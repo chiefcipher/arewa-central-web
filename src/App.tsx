@@ -36,7 +36,7 @@ function App() {
             element={<UserDashboardCategoryProducts />}
           />
           <Route
-            path="/:category/:productSlug"
+            path="/:category/:productSlug/*"
             element={<ProductDetailedPage />}
           />
           <Route path="/track-order" element={<ComingSoonUI />} />

@@ -33,24 +33,28 @@ export const Product = ({
   return (
     <div className={styles.container}>
       <Link to={"/" + category + "/" + slug} className={styles.product}>
-        <img src={imgUrl} alt={name} />
-        <div className={styles.name}>
-          <h3>{name}</h3>
+        <div className={styles.imgContainer}>
+          <img src={imgUrl} alt={name} />
         </div>
-        <p className={styles.shortDescription}>{shortDescription}</p>
-        <p className={styles.category}>
-          <span>{category}</span>
-        </p>
-        <p className={styles.prices}>
-          {discountedPrice && <span>₦{discountedPrice}</span>}
-          <span>₦{price}</span>
-        </p>
+        <div className={styles.textPart}>
+          <div className={styles.name}>
+            <h3>{name}</h3>
+          </div>
+          <p className={styles.shortDescription}>{shortDescription}</p>
+          <p className={styles.category}>
+            <span>{category}</span>
+          </p>
+          <p className={styles.prices}>
+            {discountedPrice && <span>₦{discountedPrice}</span>}
+            <span>₦{price}</span>
+          </p>
 
-        <p className={styles.ratings}>
-          <StarIcon />
-          <span>{ratingsAverage}</span>
-          <span>({ratingsNumber})</span>
-        </p>
+          <p className={styles.ratings}>
+            <StarIcon />
+            <span>{ratingsAverage}</span>
+            <span>({ratingsNumber})</span>
+          </p>
+        </div>
       </Link>
 
       {/*

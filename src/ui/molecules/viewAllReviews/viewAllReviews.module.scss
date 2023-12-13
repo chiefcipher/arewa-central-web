@@ -1,0 +1,58 @@
+@import "../../../scss/variables";
+.reviews {
+  background-color: #fff;
+  padding: 8rem;
+  border-radius: 0.8rem;
+
+  overflow-y: scroll;
+  height: 94vh;
+  font-family: $f-inter;
+
+  &::-webkit-scrollbar {
+    width: 1rem; /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 90%); /* color of the tracking area */
+    border-radius: 0.8rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $c-primary-blue; /* color of the scroll thumb */
+    border-radius: 2rem; /* roundness of the scroll thumb */
+    border: 1px solid $c-primary-blue; /* creates padding around scroll thumb */
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      margin-bottom: 3rem;
+      color: $c-primary-blue;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
+  .header,
+  .footer {
+    a {
+      font-size: 1.24rem;
+      color: $c-darkest-blue;
+      font-weight: 500;
+
+      &:hover,
+      &:focus {
+        color: $c-cool-gray;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    padding-top: 4rem;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}

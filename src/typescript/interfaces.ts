@@ -13,9 +13,18 @@ export interface I_Product {
   brand?: string;
   model?: string;
   description: string;
+  quantityLeft: number;
 }
 
 export interface I_FormMessage {
   type: "success" | "error" | "";
   content: string;
+}
+
+export interface I_Review {
+  reviewerName: string;
+  reviewTitle: string;
+  rating: number;
+  reviewContent: string;
+  date: number;
 }

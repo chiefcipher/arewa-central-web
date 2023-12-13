@@ -1,0 +1,95 @@
+@import "../../../scss/variables";
+.addReview {
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 2px hsla(0, 0, 50%, 0.5);
+  font-family: $f-inter;
+  width: 95%;
+  max-width: 60rem;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      color: $c-darker-blue;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    a {
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: $c-custom-red;
+      width: 2.5rem;
+      height: 2.5rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 80%;
+        height: 80%;
+        color: #fff;
+      }
+    }
+  }
+  h3 {
+    // added review already
+    font-size: 1.4rem;
+    color: #202020;
+    font-weight: 500;
+    margin: 4rem 0;
+
+    a {
+      color: $c-primary-blue;
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  form {
+    margin-top: 1rem;
+    p {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.3rem;
+      margin-bottom: 1.7rem;
+      label {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        padding: 0.8rem;
+        border-radius: 0.4rem;
+        box-shadow: 0 0 1px rgba($color: #000000, $alpha: 0.5);
+        border: 1px solid transparent;
+
+        &:hover,
+        &:focus {
+          border: 1px solid $c-primary-blue;
+        }
+      }
+      & > span {
+        font-size: 0.8em;
+        color: $c-custom-red;
+        margin-top: 0.5rem;
+      }
+      button[type="submit"] {
+        background-color: $c-primary-blue;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: #fff;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        border: 1px solid transparent;
+        &:hover,
+        &:focus {
+          border: 1px solid $c-primary-blue;
+          color: $c-primary-blue;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
