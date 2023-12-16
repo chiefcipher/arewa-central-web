@@ -20,6 +20,7 @@ import { FormMessage } from "../../atoms/formMessage/formMessage";
 import { sampleProduct } from "../../../shared/sampleProduct";
 import { AddReview } from "../addReview/addReview";
 import { Review } from "../../atoms/review/review";
+import { useDispatch } from "react-redux";
 import { AllReviews } from "../viewAllReviews/viewAllReviews";
 
 const addToCartSchema = yup.object().shape({
@@ -62,6 +63,8 @@ export function ProductDetailedPage() {
     type: "",
     content: "",
   });
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {

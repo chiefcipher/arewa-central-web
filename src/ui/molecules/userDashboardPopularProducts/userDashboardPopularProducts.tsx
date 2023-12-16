@@ -3,6 +3,10 @@ import styles from "./userDashboardPopularProducts.module.scss";
 import { Product } from "../../atoms/product/product";
 import { I_Product } from "../../../typescript/interfaces";
 import { sampleProduct } from "../../../shared/sampleProduct";
+import {
+  SectionHeader,
+  SubSectionHeader,
+} from "../../atoms/sectionHeaders/sectionHeaders";
 export function UserDashboardPopularProducts() {
   const sampleProducts: Array<I_Product> = Array.from({ length: 12 }).map(
     (data, i) => ({
@@ -12,9 +16,8 @@ export function UserDashboardPopularProducts() {
   );
   return (
     <div className={styles.products}>
-      <h2 tabIndex={0} className={styles.header}>
-        Popular Products
-      </h2>
+      <SubSectionHeader>Most in demand products</SubSectionHeader>
+      <SectionHeader>Popular Products</SectionHeader>
       <div className={styles.main}>
         {sampleProducts.map((el, i) => (
           <Product key={i} {...el} />

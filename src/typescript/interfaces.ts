@@ -14,6 +14,8 @@ export interface I_Product {
   model?: string;
   description: string;
   quantityLeft: number;
+  isAddedToCart: boolean;
+  quantityInCart: number;
 }
 
 export interface I_FormMessage {

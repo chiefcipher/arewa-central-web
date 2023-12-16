@@ -44,15 +44,14 @@ export const Product = ({
           <p className={styles.category}>
             <span>{category}</span>
           </p>
-          <p className={styles.prices}>
-            {discountedPrice && <span>₦{discountedPrice}</span>}
-            <span>₦{price}</span>
-          </p>
-
           <p className={styles.ratings}>
             <StarIcon />
             <span>{ratingsAverage}</span>
             <span>({ratingsNumber})</span>
+          </p>
+          <p className={styles.prices}>
+            {discountedPrice && <span>₦{discountedPrice}</span>}
+            <span>₦{price}</span>
           </p>
         </div>
       </Link>

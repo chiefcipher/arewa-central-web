@@ -11,7 +11,8 @@ export enum E_pages {
   terms = "/terms",
   privacy_policy = "/privacy-policy",
   help = "/help",
-
+  profile = "/profile",
+  cart = "/cart",
   trackOrder = "/track-order", //TODO IMPLEMENT THIS PAGE AND OTHER PAGES HERE
 }
 

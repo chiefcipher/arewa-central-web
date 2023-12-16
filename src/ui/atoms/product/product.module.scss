@@ -2,15 +2,15 @@
 @import "../../../scss/mixins";
 
 .container {
-  padding: 0.4rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 0.8rem;
   box-shadow: 0 0 1px $c-cool-gray;
-  width: 20rem;
+  width: 25rem;
   position: relative;
   border: 1px solid transparent;
   transition: all 0.2s linear;
   @include respondTo(max, $bp-small) {
-    width: 90%;
+    width: 95%;
   }
 
   &:focus,
@@ -31,7 +31,7 @@
     }
 
     .imgContainer {
-      height: 10rem;
+      height: 11rem;
       width: 100%;
       @include respondTo(max, $bp-small) {
         align-self: stretch;
@@ -60,26 +60,28 @@
         }
       }
       .shortDescription {
-        color: #656565;
-        font-size: 1.3rem;
+        color: #2c2c2c;
+        font-size: 1.24rem;
+        font-weight: 400;
         margin: 0.5rem 0;
-        max-width: 90%;
+        max-width: 95%;
       }
 
       .category {
         font-weight: 500;
         font-size: 1.2rem;
-        margin-bottom: 0.7rem;
+        margin: 1rem 0;
         span {
-          color: #fff;
-          padding: 2px;
-          border-radius: 2px;
-          background: $c-cool-gray;
+          padding: 0.3rem 0.9rem;
+          border-radius: 0.3rem;
+          background: rgba($c-cool-gray, 0.2);
+
+          color: #303030;
         }
       }
       .prices {
-        margin: 1rem 0;
-
+        margin: 0;
+        text-align: right;
         span:nth-of-type(1) {
           color: $c-darkest-blue;
           font-size: 1.4rem;
@@ -100,7 +102,7 @@
         display: flex;
         align-items: flex-end;
         font-size: 1rem;
-
+        margin: 0.7rem 0;
         svg {
           width: 1.8rem;
           height: 1.8rem;

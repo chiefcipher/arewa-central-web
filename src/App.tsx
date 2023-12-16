@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/combine-styles.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { SignUp } from "./ui/pages/signUp/signUp";
 import { Login } from "./ui/pages/login/login";
 import { AuthLayout } from "./ui/pages/authLayout/authLayout";
@@ -14,41 +14,37 @@ import { UserDashboardCategoryProducts } from "./ui/molecules/userDashboardCateg
 import { ErrorUI } from "./ui/atoms/errorUI/errorUI";
 import { ProductDetailedPage } from "./ui/molecules/productDetailedPage/productDetailedPage";
 import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
+
 function App() {
   const fakeToken = localStorage.getItem(E_Hidden.tokenName) || "some text";
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<UserDashboard />}>
-          <Route
-            path="/"
-            element={
-              <>
-                <UserDashboardHighestRatedProducts />
-                <UserDashboardNewProducts />
-                <UserDashboardPopularProducts />
-              </>
-            }
-          />
-          <Route
-            path="/:category"
-            element={<UserDashboardCategoryProducts />}
-          />
-          <Route
-            path="/:category/:productSlug/*"
-            element={<ProductDetailedPage />}
-          />
-          <Route path="/track-order" element={<ComingSoonUI />} />
-        </Route>
-        <Route element={<AuthLayout />}>
-          <Route path={E_pages.signup} element={<SignUp />} />
-          <Route path={E_pages.login} element={<Login />} />
-          <Route path={E_pages.forgotPassword} element={<ForgotPassword />} />
-        </Route>
-        <Route path="*" element={<ErrorUI type={404} />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route element={<UserDashboard />}>
+        <Route
+          path="/"
+          element={
+            <>
+              <UserDashboardHighestRatedProducts />
+              <UserDashboardNewProducts />
+              <UserDashboardPopularProducts />
+            </>
+          }
+        />
+        <Route path="/:category" element={<UserDashboardCategoryProducts />} />
+        <Route
+          path="/:category/:productSlug/*"
+          element={<ProductDetailedPage />}
+        />
+        <Route path="/track-order" element={<ComingSoonUI />} />
+      </Route>
+      <Route element={<AuthLayout />}>
+        <Route path={E_pages.signup} element={<SignUp />} />
+        <Route path={E_pages.login} element={<Login />} />
+        <Route path={E_pages.forgotPassword} element={<ForgotPassword />} />
+      </Route>
+      <Route path="*" element={<ErrorUI type={404} />} />
+    </Routes>
   );
 }
 

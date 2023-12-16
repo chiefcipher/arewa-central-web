@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./userDashboardHighestRatedProducts.module.scss";
 import { Product } from "../../atoms/product/product";
 import { I_Product } from "../../../typescript/interfaces";
-import { SampleProductImage } from "../../../shared/assets";
 import { sampleProduct } from "../../../shared/sampleProduct";
+import {
+  SectionHeader,
+  SubSectionHeader,
+} from "../../atoms/sectionHeaders/sectionHeaders";
 
 export function UserDashboardHighestRatedProducts() {
   const sampleProducts: Array<I_Product> = Array.from({ length: 12 }).map(
@@ -14,9 +17,8 @@ export function UserDashboardHighestRatedProducts() {
   );
   return (
     <div className={styles.products}>
-      <h2 tabIndex={0} className={styles.header}>
-        Highest Rated Products
-      </h2>
+      <SubSectionHeader>Our products with the highest ratings</SubSectionHeader>
+      <SectionHeader>Highest Rated Products</SectionHeader>
       <div className={styles.main}>
         {sampleProducts.map((el, i) => (
           <Product key={i} {...el} />
