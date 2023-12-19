@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./errorUI.module.scss";
 import { Icon } from "@iconify/react";
-import { E_pages } from "../../../typescript/enums";
+import { E_Pages } from "../../../typescript/enums";
 export function ErrorUI({ type }: { type: 404 | 500 }) {
   return (
     <div className={styles.errorUI}>

@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { SignUp } from "./ui/pages/signUp/signUp";
 import { Login } from "./ui/pages/login/login";
 import { AuthLayout } from "./ui/pages/authLayout/authLayout";
-import { E_Hidden, E_pages } from "./typescript/enums";
+import { E_Hidden, E_Pages } from "./typescript/enums";
 import { ForgotPassword } from "./ui/pages/forgotPassword/forgotPassword";
 import { UserDashboard } from "./ui/pages/userDashboard/userDashboard";
 import { UserDashboardPopularProducts } from "./ui/molecules/userDashboardPopularProducts/userDashboardPopularProducts";
@@ -14,6 +14,8 @@ import { UserDashboardCategoryProducts } from "./ui/molecules/userDashboardCateg
 import { ErrorUI } from "./ui/atoms/errorUI/errorUI";
 import { ProductDetailedPage } from "./ui/molecules/productDetailedPage/productDetailedPage";
 import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
+import { Cart } from "./ui/pages/cart/cart";
+import { Checkout } from "./ui/pages/checkout/checkout";
 
 function App() {
   const fakeToken = localStorage.getItem(E_Hidden.tokenName) || "some text";
@@ -37,11 +39,15 @@ function App() {
           element={<ProductDetailedPage />}
         />
         <Route path="/track-order" element={<ComingSoonUI />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        {/* TODO ADD ORDERS PAGED WITH ORDER STATUS DELIVERED OR NOT WITH ORDER ID */}
       </Route>
+
       <Route element={<AuthLayout />}>
-        <Route path={E_pages.signup} element={<SignUp />} />
-        <Route path={E_pages.login} element={<Login />} />
-        <Route path={E_pages.forgotPassword} element={<ForgotPassword />} />
+        <Route path={E_Pages.signup} element={<SignUp />} />
+        <Route path={E_Pages.login} element={<Login />} />
+        <Route path={E_Pages.forgotPassword} element={<ForgotPassword />} />
       </Route>
       <Route path="*" element={<ErrorUI type={404} />} />
     </Routes>

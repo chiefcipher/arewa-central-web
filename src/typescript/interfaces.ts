@@ -16,6 +16,8 @@ export interface I_Product {
   quantityLeft: number;
   isAddedToCart: boolean;
   quantityInCart: number;
+  selectedColor?: string;
+  selectedSize?: string;
 }
 
 export interface I_FormMessage {

@@ -267,7 +267,10 @@
             &:active {
               transform: translateX(-2px) translateY(2px);
             }
-            &:nth-of-type(1) {
+            &:disabled {
+              cursor: not-allowed;
+            }
+            &[data-type="add-to-cart"] {
               color: #fff;
               background-color: $c-darkest-blue;
 
@@ -277,7 +280,7 @@
                 color: $c-darkest-blue;
               }
             }
-            &:nth-of-type(2) {
+            &[data-type="buy-now"] {
               color: $c-darkest-blue;
               background-color: #fff;
               &:focus,

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./signUpFormOne.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { E_pages } from "../../../typescript/enums";
+import { E_Pages } from "../../../typescript/enums";
 import UserImg from "./user.svg";
 import BusinessImg from "./brief-case.svg";
 import { RightArrowSvg } from "../../../shared/assets";
@@ -13,7 +13,7 @@ export function SignUpFormOne() {
     <div className={styles.formOne}>
       <div className={styles.header}>
         <span>Already have an account?</span>
-        <Link to={E_pages.login}> Login</Link>
+        <Link to={E_Pages.login}> Login</Link>
       </div>
 
       <div className={styles.prompt}>

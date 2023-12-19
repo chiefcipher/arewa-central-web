@@ -1,4 +1,4 @@
-export enum E_pages {
+export enum E_Pages {
   login = "/login",
   signup = "/signup/*",
   forgotPassword = "/forgot-password",
@@ -13,6 +13,8 @@ export enum E_pages {
   help = "/help",
   profile = "/profile",
   cart = "/cart",
+  orders = "/orders",
+  checkout = "/checkout",
   trackOrder = "/track-order", //TODO IMPLEMENT THIS PAGE AND OTHER PAGES HERE
 }
 

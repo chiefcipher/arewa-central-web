@@ -7,7 +7,7 @@ import {
   I_Review,
 } from "../../../typescript/interfaces";
 import { CartIcon, SampleProductImage } from "../../../shared/assets";
-import { Link, Routes, useParams, Route } from "react-router-dom";
+import { Link, Routes, useParams, Route, useNavigate } from "react-router-dom";
 import { Pagination } from "../../atoms/pagination/pagination";
 import { StarsRating } from "../../atoms/starsRating/starsRating";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
@@ -22,6 +22,8 @@ import { AddReview } from "../addReview/addReview";
 import { Review } from "../../atoms/review/review";
 import { useDispatch } from "react-redux";
 import { AllReviews } from "../viewAllReviews/viewAllReviews";
+import { ADD_CART_ITEM } from "../../../store/actionTypes";
+import { E_Pages } from "../../../typescript/enums";
 
 const addToCartSchema = yup.object().shape({
   productColors: yup.array().of(yup.string()),
@@ -63,6 +65,8 @@ export function ProductDetailedPage() {
     type: "",
     content: "",
   });
+  const [isSubmitting, setSubmitting] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -78,6 +82,8 @@ export function ProductDetailedPage() {
   if (isLoading) return <LoadingUI />;
 
   const handleAddToCart = async () => {
+    if (sampleProduct.isAddedToCart) return navigate(E_Pages.cart);
+    setSubmitting(true);
     const data = {
       productColors: sampleProduct.colors || [],
       selectedColor: selectedColor,
@@ -94,12 +100,28 @@ export function ProductDetailedPage() {
           content: "valid inputs, adding to cart...",
         });
       }
-      //  TODO ADD LOGIC TO ADD TO CART
+      //  TODO ADD LOG  IC TO ADD TO CART
+      // todo we are sending this data to our cart api rather
+      // simulate api
+      setTimeout(() => {
+        dispatch({
+          type: ADD_CART_ITEM,
+          itemData: data,
+        });
+
+        setFormMessage({
+          type: "success",
+          content: "Product added to cart successfully.",
+        });
+        setSubmitting(false);
+      }, 4000);
     } catch (err: any) {
       setFormMessage({
         type: "error",
         content: err.message,
       });
+      setSubmitting(false);
+    } finally {
     }
   };
   return (
@@ -243,12 +265,30 @@ export function ProductDetailedPage() {
                 </button>
               </div>
               <div>
-                {/* main cta part  */}
-                <button onClick={handleAddToCart}>
-                  <CartIcon />
-                  <span>Add to cart</span>
+                <button
+                  onClick={handleAddToCart}
+                  data-type="add-to-cart"
+                  disabled={isSubmitting}
+                >
+                  {sampleProduct.isAddedToCart ? (
+                    <>
+                      <Icon icon="typcn:tick" />
+                      <span>Go to cart</span>
+                    </>
+                  ) : isSubmitting ? (
+                    <>
+                      <Icon icon="fa:spinner" className={"spinner"} />
+                      <span>Processing</span>
+                    </>
+                  ) : (
+                    <>
+                      <CartIcon />
+                      <span>Add to cart</span>
+                    </>
+                  )}
                 </button>
-                {/* TODO MIGHT ADD THIS LATER ON <button>
+
+                {/* TODO MIGHT ADD THIS LATER ON <button data-type='buy-now'>
                 <Icon icon="game-icons:money-stack" />
                 <span>Buy now</span>
               </button> */}

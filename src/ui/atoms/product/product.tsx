@@ -4,7 +4,7 @@ import { I_Product } from "../../../typescript/interfaces";
 import { Icon } from "@iconify/react";
 import { CartIcon, StarIcon, TickIcon } from "../../../shared/assets";
 import { Link } from "react-router-dom";
-import { E_pages } from "../../../typescript/enums";
+import { E_Pages } from "../../../typescript/enums";
 import { StarsRating } from "../starsRating/starsRating";
 export const Product = ({
   ratingsAverage,

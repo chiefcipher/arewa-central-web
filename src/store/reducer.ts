@@ -16,10 +16,10 @@ export const reducer = (state: I_Reducer = initState, action: any) => {
   switch (action.type) {
     case actionTypes.ADD_CART_ITEM:
       console.log("add cart");
-      return;
+      return state ;
     case actionTypes.REMOVE_CART_ITEM:
       console.log("remove cart");
-      return;
+      return state; 
     default:
       return state;
   }

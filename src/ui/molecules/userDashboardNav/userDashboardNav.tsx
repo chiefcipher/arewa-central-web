@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./userDashboardNav.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { E_Hidden, E_pages } from "../../../typescript/enums";
+import { E_Hidden, E_Pages } from "../../../typescript/enums";
 import {
   ArewaCentralPNG,
   ArewaCentralWEBP,
@@ -9,6 +9,7 @@ import {
   CartIcon,
   ProfileIcon,
   LoginIcon,
+  CarIcon,
 } from "../../../shared/assets";
 import { Icon } from "@iconify/react";
 
@@ -16,6 +17,10 @@ export function UserDashboardNav() {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem(E_Hidden.tokenName) || "some text";
+  const handleLinkClick = () => {
+    // close nav
+    if (showMobileNav) setShowMobileNav(false);
+  };
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__logo}>
@@ -45,19 +50,34 @@ export function UserDashboardNav() {
         } `}
       >
         {isLoggedIn ? (
-          <button className={styles.profileBtn}>
-            <ProfileIcon />
-            <span>Account</span>{" "}
-          </button>
+          <>
+            <button
+              className={styles.profileBtn}
+              onClick={() => navigate(E_Pages.profile)}
+            >
+              <ProfileIcon />
+              <span>Account</span>{" "}
+            </button>
+            <button
+              className={styles.profileBtn}
+              onClick={() => navigate(E_Pages.orders)}
+            >
+              <CarIcon />
+              <span>Orders</span>{" "}
+            </button>
+          </>
         ) : (
-          <button className={styles.authBtn}>
+          <button
+            className={styles.authBtn}
+            onClick={() => navigate(E_Pages.login)}
+          >
             <LoginIcon />
             <span>Sign in</span>{" "}
           </button>
         )}
         <button
           className={styles.cartBtn}
-          onClick={() => navigate(E_pages.cart)}
+          onClick={() => navigate(E_Pages.cart)}
         >
           <CartIcon />
           <span>Cart</span>{" "}
@@ -70,17 +90,25 @@ export function UserDashboardNav() {
           >
             <Icon icon={"zondicons:close-solid"} />
           </button>
-          <Link to={E_pages.signup}>Register </Link>
-          <Link to={E_pages.about}>About Us</Link>
-          <Link to={E_pages.contact}>Contact Us</Link>
-          <Link to={E_pages.investors}>Investors </Link>
-          <Link to={E_pages.careers}>Careers </Link>
-          <Link to={E_pages.terms}>Terms </Link>
-          <Link to={E_pages.privacy_policy}>Privacy Policy </Link>
-          <Link to={E_pages.help}>Help </Link>
-          <Link to={E_pages.login}>Login </Link>
-          <Link to={E_pages.profile}>Account </Link>
-          <Link to={E_pages.cart}>Cart </Link>
+          <Link to={E_Pages.signup} onClick={handleLinkClick}>
+            Register{" "}
+          </Link>
+          {/* <Link to={E_Pages.about}>About Us</Link>
+          <Link to={E_Pages.contact}>Contact Us</Link>
+          <Link to={E_Pages.investors}>Investors </Link>
+          <Link to={E_Pages.careers}>Careers </Link>
+          <Link to={E_Pages.terms}>Terms </Link>
+          <Link to={E_Pages.privacy_policy}>Privacy Policy </Link>
+          <Link to={E_Pages.help}>Help </Link> */}
+          <Link to={E_Pages.login} onClick={handleLinkClick}>
+            Login{" "}
+          </Link>
+          <Link to={E_Pages.profile} onClick={handleLinkClick}>
+            Account{" "}
+          </Link>
+          <Link to={E_Pages.cart} onClick={handleLinkClick}>
+            Cart{" "}
+          </Link>
         </p>
       </div>
       <button

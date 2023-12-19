@@ -1,7 +1,6 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
 .nav {
-  background: $c-primary-blue;
   background: #fff;
   // color: #fff;
   display: flex;
@@ -9,9 +8,11 @@
   padding: 2rem 5%;
   font-family: $f-inter;
   box-shadow: 0 1px 2px rgba($c-cool-gray, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 21;
 
   @include respondTo(max, $bp-medium) {
-    position: relative;
     flex-direction: column;
     gap: 1rem;
     align-items: center;

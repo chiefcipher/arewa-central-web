@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./forgotPasswordForm.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { E_pages } from "../../../typescript/enums";
+import { E_Pages } from "../../../typescript/enums";
 
 import { Formik, Form } from "formik";
 import { AsyncButton } from "../../atoms/asyncButton/asyncButton";
@@ -21,13 +21,13 @@ export function ForgotPasswordForm() {
       actions.setSubmitting(false);
       setSuccessPasswordResetRequest(true);
 
-      // navigate(E_pages.dashboard);
+      // navigate(E_Pages.dashboard);
     }, 3000);
   };
   return (
     <div className={styles.forgotPassword}>
       <div className={styles.header}>
-        <Link to={E_pages.login}>
+        <Link to={E_Pages.login}>
           <img src={ForgotPasswordIcon} alt="Forgot Password" />
           <span>Login Instead?</span>
         </Link>

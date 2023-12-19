@@ -15,8 +15,10 @@ import { ReactComponent as CartIcon } from "./cartIcon.svg";
 import { ReactComponent as StarIcon } from "./starSvg.svg";
 import { ReactComponent as TickIcon } from "./tick.svg";
 import SampleProductImage from "./sampleProductImage.png";
+import CardsPaymentMethod from "./remita-payment-logo-horizonal.png";
 export {
   ArewaCentralPNG,
+  CardsPaymentMethod,
   SampleProductImage,
   LoginIcon,
   StarIcon,

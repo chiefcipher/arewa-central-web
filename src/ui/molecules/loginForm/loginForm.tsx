@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./loginForm.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { E_pages } from "../../../typescript/enums";
+import { E_Pages } from "../../../typescript/enums";
 
 import { Formik, Form } from "formik";
 import { AsyncButton } from "../../atoms/asyncButton/asyncButton";
@@ -23,13 +23,13 @@ export function LoginForm() {
 
       actions.setSubmitting(false);
 
-      // navigate(E_pages.dashboard);
+      // navigate(E_Pages.dashboard);
     }, 3000);
   };
   return (
     <div className={styles.loginForm}>
       <div className={styles.header}>
-        <Link to={E_pages.forgotPassword}>
+        <Link to={E_Pages.forgotPassword}>
           <img src={ForgotPasswordIcon} alt="Forgot Password" />
           <span>Forgot Password?</span>
         </Link>

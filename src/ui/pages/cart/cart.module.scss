@@ -1,0 +1,41 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.cart {
+  padding: 4rem 5%;
+  font-family: $f-inter;
+  .totalWrapper {
+    position: sticky;
+    background-color: #fff;
+    top: 6.7rem;
+    z-index: 20;
+    padding: 1rem 0;
+    text-align: right;
+
+    @include respondTo(max, $bp-medium) {
+      top: 10rem;
+      //  bring it down cz nav increases in size
+    }
+    & > p {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      span:nth-of-type(1) {
+        font-weight: 500;
+      }
+    }
+    .checkoutBtn {
+      width: fit-content;
+      padding: 1rem 4rem;
+      background-color: $c-darkest-blue;
+      color: #fff;
+      font-size: 1.4rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+
+      display: flex;
+      column-gap: 0.7rem;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}
