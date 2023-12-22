@@ -1,13 +1,12 @@
 @import "../../../scss/variables";
-.errorUI {
+.empty {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10rem 2rem;
-  color: #ff2222;
 
   svg {
-    font-size: 30rem;
+    font-size: 28rem;
   }
 
   h3 {
@@ -15,16 +14,20 @@
     margin-top: 10rem;
     font-weight: 500;
     text-align: center;
+    color: #ff2222;
   }
-  a {
+  p {
     font-size: 1.6rem;
     text-align: center;
-    font-weight: 500;
-    color: $c-primary-blue;
-    margin-top: 2rem;
-    &:focus,
-    &:hover {
-      color: $c-cool-gray;
+    a {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $c-primary-blue;
+      margin-top: 2rem;
+      &:focus,
+      &:hover {
+        color: $c-cool-gray;
+      }
     }
   }
 }

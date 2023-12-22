@@ -100,6 +100,9 @@ export function UserDashboardNav() {
           <Link to={E_Pages.terms}>Terms </Link>
           <Link to={E_Pages.privacy_policy}>Privacy Policy </Link>
           <Link to={E_Pages.help}>Help </Link> */}
+          <Link to={E_Pages.orders} onClick={handleLinkClick}>
+            Orders{" "}
+          </Link>
           <Link to={E_Pages.login} onClick={handleLinkClick}>
             Login{" "}
           </Link>

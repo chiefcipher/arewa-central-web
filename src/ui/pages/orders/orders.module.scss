@@ -1,0 +1,73 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.orders {
+  padding: 10rem 5% 20rem 5%;
+  @include respondTo(max, $bp-medium) {
+    overflow-x: scroll;
+  }
+
+  .wrapper {
+    border-radius: 0.6rem;
+    border: 1px solid rgba($c-cool-gray, 0.2);
+    padding: 2rem;
+    font-size: 1.34rem;
+
+    @include respondTo(max, $bp-medium) {
+      font-size: 1rem;
+      padding: 1rem;
+      min-width: 40rem;
+    }
+    table {
+      width: 100%;
+
+      thead {
+        th {
+          color: $c-darkest-blue;
+          text-align: left;
+          background-color: hsl(0, 0%, 98%);
+          padding: 1rem;
+          @include respondTo(max, $bp-medium) {
+            padding: 2%;
+          }
+          &:nth-last-of-type(2),
+          &:nth-last-of-type(1) {
+            // status and actions quantity th
+            text-align: center;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          padding: 0.5rem;
+          color: #262626;
+
+          @include respondTo(max, $bp-medium) {
+            padding: 1%;
+          }
+          &:nth-last-of-type(2),
+          &:nth-last-of-type(3) {
+            // status  anD quantity td
+            text-align: center;
+          }
+
+          &:nth-last-of-type(2) {
+            //  STATUS  td
+            button {
+              cursor: pointer;
+              display: flex;
+              column-gap: 0.5rem;
+              margin: 0 auto;
+              @include respondTo(max, $bp-medium) {
+                font-size: 1rem;
+              }
+              svg {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

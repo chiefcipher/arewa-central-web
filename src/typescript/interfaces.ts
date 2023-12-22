@@ -1,3 +1,5 @@
+import { E_Order_Remark, E_Order_Status } from "./enums";
+
 export interface I_Product {
   ratingsAverage: number;
   ratingsNumber: number;
@@ -31,4 +33,30 @@ export interface I_Review {
   rating: number;
   reviewContent: string;
   date: number;
+}
+
+export interface I_Order {
+  date: string;
+  orderId: string;
+  status: E_Order_Status;
+  amount: number;
+  quantity: number;
+  remark: E_Order_Remark;
+}
+
+export interface I_Profile {
+  imgUrl: string;
+  firstName: string;
+  lastName: string;
+  residentState: string;
+  address: string;
+  phoneNumber: string;
+  email: string;
+  isVerified: boolean;
+  bankDetails: I_BankDetails;
+}
+
+export interface I_BankDetails {
+  bankName: string;
+  accountNumber: string;
 }

@@ -38,13 +38,6 @@ export const Checkout: React.FC = () => {
               Kaduna, Kaduna. 0 Kaduna, Kaduna, Kaduna.{" "}
             </span>
             <Link to={E_Pages.profile}> Edit</Link>
-            {/* TODO ADD PROMPT THAT THEY SHOULD KEEP 
-            THEIR PHONES ON AND EMAIL ACCESSIBLE AS THEY WILL BE 
-            MESSAGED AND CALLED AFTER THEIR ORDER HAS BEEN WEIGHBILLED 
-            DOWN TO THEIR STATE THEY WILL ALSO BE SENT THE CONTACT NUMBER 
-            FOR THEM TO GO COLLECT THEIR STUFF 
-            
-            they can also track  their order at the /orders page */}
           </p>
           <p>
             <span>Tel </span>
@@ -66,6 +59,20 @@ export const Checkout: React.FC = () => {
             <span>Process Payment</span>
           </button>
           {/* TODO AFTER THEY MAKE PAYMENT THEY GET AN ORDER ID WHICH THEY CAN NOW SEE IN THEIR LIST OF ORDERS  */}
+        </div>
+
+        <div className={styles.deliveryInfo}>
+          <SubSectionHeader>Delivery Information</SubSectionHeader>
+          <p>
+            <span>Delivery Method: Weigh Billed</span>
+            <br />
+            <br />
+            Kindly keep your contact details accessible, your order would be
+            placed immediately after payment and can be tracked in the{" "}
+            <Link to={E_Pages.orders}>Orders</Link> page. You will be contacted
+            via call and email with the contact details of who to get your item
+            from after arrival in your chosen state of residence.
+          </p>{" "}
         </div>
       </div>
     </div>

@@ -16,6 +16,8 @@ import { ProductDetailedPage } from "./ui/molecules/productDetailedPage/productD
 import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
 import { Cart } from "./ui/pages/cart/cart";
 import { Checkout } from "./ui/pages/checkout/checkout";
+import { Orders } from "./ui/pages/orders/orders";
+import { Profile } from "./ui/pages/profile/profile";
 
 function App() {
   const fakeToken = localStorage.getItem(E_Hidden.tokenName) || "some text";
@@ -39,13 +41,14 @@ function App() {
           element={<ProductDetailedPage />}
         />
         <Route path="/track-order" element={<ComingSoonUI />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        {/* TODO ADD ORDERS PAGED WITH ORDER STATUS DELIVERED OR NOT WITH ORDER ID */}
+        <Route path={E_Pages.cart} element={<Cart />} />
+        <Route path={E_Pages.profile} element={<Profile />} />
+        <Route path={E_Pages.checkout} element={<Checkout />} />
+        <Route path={E_Pages.orders} element={<Orders />} />
       </Route>
 
       <Route element={<AuthLayout />}>
-        <Route path={E_Pages.signup} element={<SignUp />} />
+        <Route path={E_Pages.signup + "/*"} element={<SignUp />} />
         <Route path={E_Pages.login} element={<Login />} />
         <Route path={E_Pages.forgotPassword} element={<ForgotPassword />} />
       </Route>
