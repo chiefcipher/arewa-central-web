@@ -7,3 +7,4 @@ import React from "react";
 // todo manage seo with helmet
 
 // todo admin ui
+// admin application should be different
