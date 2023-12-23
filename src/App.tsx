@@ -18,6 +18,7 @@ import { Cart } from "./ui/pages/cart/cart";
 import { Checkout } from "./ui/pages/checkout/checkout";
 import { Orders } from "./ui/pages/orders/orders";
 import { Profile } from "./ui/pages/profile/profile";
+import { TrackOrder } from "./ui/pages/trackOrder/trackOrder";
 
 function App() {
   const fakeToken = localStorage.getItem(E_Hidden.tokenName) || "some text";
@@ -40,11 +41,11 @@ function App() {
           path="/:category/:productSlug/*"
           element={<ProductDetailedPage />}
         />
-        <Route path="/track-order" element={<ComingSoonUI />} />
         <Route path={E_Pages.cart} element={<Cart />} />
         <Route path={E_Pages.profile} element={<Profile />} />
         <Route path={E_Pages.checkout} element={<Checkout />} />
         <Route path={E_Pages.orders} element={<Orders />} />
+        <Route path={E_Pages.trackOrder} element={<TrackOrder />} />
       </Route>
 
       <Route element={<AuthLayout />}>
