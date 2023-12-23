@@ -8,6 +8,7 @@ import { E_Order_Remark, E_Order_Status } from "../../../typescript/enums";
 import { Icon } from "@iconify/react";
 export function TrackOrder(): JSX.Element {
   const [orderId, setOrderId] = useState<string>("");
+  const [order, setOrder] = useState<I_Order | null>(null);
   const [isLoadingOrder, setLoadingOrder] = useState<boolean>(false);
   const [formMessage, setFormMessage] = useState<I_FormMessage>({
     type: "",
@@ -30,7 +31,7 @@ export function TrackOrder(): JSX.Element {
     }
     setLoadingOrder(true);
     setTimeout(() => {
-      console.log("loaded order");
+      setOrder(sampleOrder);
       setLoadingOrder(false);
     }, 3000);
   };
@@ -54,76 +55,82 @@ export function TrackOrder(): JSX.Element {
           </p>
           <FormMessage {...formMessage} />
           <button type="submit" disabled={isLoadingOrder}>
-            Retrieve Details
+            {isLoadingOrder ? (
+              <Icon icon="fa:spinner" className={"spinner"} />
+            ) : (
+              "Retrieve Details"
+            )}
           </button>
         </form>
       </div>
-      <div className={styles.tableWrapper}>
-        <table>
-          <thead>
-            <tr>
-              <th>S/N</th>
-              <th>Date</th>
-              <th>Order ID </th>
-              <th>Amount </th>
-              <th>Quantity </th>
-              <th>Status </th>
-              <th>Remark </th>
-              {/* <th>Action </th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {
-              <tr className={styles.order}>
-                <td>{1}</td>
-                <td>{sampleOrder.date}</td>
-                <td>{orderId}</td>
-                <td>₦ {sampleOrder.amount}</td>
-                <td>{sampleOrder.quantity}</td>
-                <td>
-                  {sampleOrder.status === E_Order_Status.delivered ? (
-                    <button className={"greenTableBtn"} title="Delivered">
-                      <Icon icon="mdi:package-delivered" />
-                      <span>Delivered</span>
-                    </button>
-                  ) : sampleOrder.status === E_Order_Status.processing ? (
-                    <button className={"orangeTableBtn"} title="Pending">
-                      <Icon icon="material-symbols-light:pending" />
-                      <span>Processing</span>
-                    </button>
-                  ) : sampleOrder.status ===
-                    E_Order_Status.in_state_of_residence ? (
-                    <button
-                      className={"blueTableBtn"}
-                      title="In state of residence"
-                    >
-                      <Icon icon="mingcute:location-fill" />
-                      <span>In State</span>
-                    </button>
-                  ) : sampleOrder.status === E_Order_Status.declined ? (
-                    <button className={"redTableButton"} title="Declined">
-                      <Icon icon="material-symbols-light:cancel" />
-                      <span>Declined</span>
-                    </button>
-                  ) : (
-                    <button className={"blueTableBtn"} title="On transit">
-                      <Icon icon="ph:car-fill" />
-                      <span>On Transit</span>
-                    </button>
-                  )}
-                </td>
-                <td>{sampleOrder.remark}</td>
-                {/* <td>
+      {order && (
+        <div className={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Date</th>
+                <th>Order ID </th>
+                <th>Amount </th>
+                <th>Quantity </th>
+                <th>Status </th>
+                <th>Remark </th>
+                {/* <th>Action </th> */}
+              </tr>
+            </thead>
+            <tbody>
+              {
+                <tr className={styles.order}>
+                  <td>{1}</td>
+                  <td>{order.date}</td>
+                  <td>{orderId}</td>
+                  <td>₦ {order.amount}</td>
+                  <td>{order.quantity}</td>
+                  <td>
+                    {order.status === E_Order_Status.delivered ? (
+                      <button className={"greenTableBtn"} title="Delivered">
+                        <Icon icon="mdi:package-delivered" />
+                        <span>Delivered</span>
+                      </button>
+                    ) : order.status === E_Order_Status.processing ? (
+                      <button className={"orangeTableBtn"} title="Pending">
+                        <Icon icon="material-symbols-light:pending" />
+                        <span>Processing</span>
+                      </button>
+                    ) : order.status ===
+                      E_Order_Status.in_state_of_residence ? (
+                      <button
+                        className={"blueTableBtn"}
+                        title="In state of residence"
+                      >
+                        <Icon icon="mingcute:location-fill" />
+                        <span>In State</span>
+                      </button>
+                    ) : order.status === E_Order_Status.declined ? (
+                      <button className={"redTableButton"} title="Declined">
+                        <Icon icon="material-symbols-light:cancel" />
+                        <span>Declined</span>
+                      </button>
+                    ) : (
+                      <button className={"blueTableBtn"} title="On transit">
+                        <Icon icon="ph:car-fill" />
+                        <span>On Transit</span>
+                      </button>
+                    )}
+                  </td>
+                  <td>{order.remark}</td>
+                  {/* <td>
                   <button >
                     <Icon icon="ic:delete" />
                   </button>
                 </td> */}
-                {/* TODO ALLOW THIS DELETE FUNCTION WORK  */}
-              </tr>
-            }
-          </tbody>
-        </table>
-      </div>
+                  {/* TODO ALLOW THIS DELETE FUNCTION WORK  */}
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
