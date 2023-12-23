@@ -50,7 +50,7 @@ export function Profile(): React.ReactElement {
   const [hasEditedProfile, setHasEditedProfile] = useState<boolean>(false);
   const [formMessage, setFormMessage] = useState<I_FormMessage>({
     type: "",
-    content: "",
+    content: "Edit to make changes",
   });
   const [profileImg, setProfileImg] = useState<string | ArrayBuffer | null>("");
   // todo make profile image come from api
@@ -263,7 +263,7 @@ export function Profile(): React.ReactElement {
                     className={styles.submitBtn}
                     title={
                       !hasEditedProfile
-                        ? "Edit Profile to enable this button"
+                        ? "Edit profile to enable this button"
                         : "Click to save changes"
                     }
                     disabled={isSubmitting || !hasEditedProfile}
