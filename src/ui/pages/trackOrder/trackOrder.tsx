@@ -37,7 +37,7 @@ export function TrackOrder(): JSX.Element {
   };
   return (
     <div className={styles.trackOrder}>
-      <Seo title="Track Order" description="Track your orders" />
+      {/* <Seo title="Track Order" description="Track your orders" /> */}
       <SectionHeader>Track Order</SectionHeader>
       <p>Use order id to search for order</p>
       <div className={styles.container}>
