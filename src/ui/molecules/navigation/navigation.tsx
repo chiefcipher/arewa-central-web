@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./navigation.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { E_Hidden, E_Pages } from "../../../typescript/enums";
@@ -10,6 +10,7 @@ import {
   ProfileIcon,
   LoginIcon,
   CarIcon,
+  NotificationIcon,
 } from "../../../shared/assets";
 import { Icon } from "@iconify/react";
 
@@ -69,8 +70,7 @@ export function Navigation() {
               className={styles.profileBtn}
               onClick={() => navigate(E_Pages.notification)}
             >
-              <Icon icon="iconamoon:notification-fill" />
-              <span>Notifications</span>{" "}
+              <NotificationIcon /> <span>Notifications</span>{" "}
             </button>
           </>
         ) : (

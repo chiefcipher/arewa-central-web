@@ -1,0 +1,111 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.notification {
+  padding: 6rem 5% 8rem 5%;
+  font-family: $f-inter;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4rem;
+    margin-top: 4rem;
+    .notification {
+      display: flex;
+      align-items: flex-start;
+
+      box-shadow: 0 0 2px 2px rgba($color: $c-cool-gray, $alpha: 0.1);
+      padding: 4rem 2.2rem;
+      border-radius: 0.8rem;
+      width: 100%;
+      max-width: 60rem;
+      @include respondTo(max, $bp-medium) {
+        padding: 4rem 1rem;
+      }
+      div.notificationIconPart {
+        // notification icon
+        padding: 0 2rem 1rem 0;
+        @include respondTo(max, $bp-medium) {
+          padding: 0 1rem 1rem 0;
+        }
+
+        svg {
+          width: 4rem;
+          height: 4rem;
+          color: grey;
+        }
+      }
+      div.notificationTextPart {
+        & > div {
+          // date and priority
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          p:nth-of-type(1) {
+            // date p
+          }
+          p:nth-of-type(2) {
+            display: inline;
+            margin-left: auto;
+            text-align: right;
+            // priority p
+
+            text-transform: capitalize;
+          }
+        }
+
+        h3 {
+          // notification sender
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 0.7rem;
+          color: $c-darkest-blue;
+        }
+        h4 {
+          // notification title
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: #4f5057;
+          margin-bottom: 1rem;
+        }
+
+        p:nth-last-of-type(1) {
+          // content  p
+          font-size: 1.4rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .noNotifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 2rem;
+    color: #ff2222;
+
+    svg {
+      font-size: 30rem;
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      margin-top: 10rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    a {
+      font-size: 1.6rem;
+      text-align: center;
+      font-weight: 500;
+      color: $c-primary-blue;
+      margin-top: 2rem;
+      &:focus,
+      &:hover {
+        color: $c-cool-gray;
+      }
+    }
+  }
+}

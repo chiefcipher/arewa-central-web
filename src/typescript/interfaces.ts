@@ -60,3 +60,11 @@ export interface I_BankDetails {
   bankName: string;
   accountNumber: string;
 }
+
+export interface I_Notification {
+  sender: string;
+  title: string;
+  content: string;
+  priority: "low" | "medium" | "high";
+  date: number;
+}

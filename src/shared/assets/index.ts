@@ -13,6 +13,7 @@ import { ReactComponent as ProfileIcon } from "./profileIcon.svg";
 import { ReactComponent as LoginIcon } from "./loginIcon.svg";
 import { ReactComponent as CartIcon } from "./cartIcon.svg";
 import { ReactComponent as StarIcon } from "./starSvg.svg";
+import { ReactComponent as NotificationIcon } from "./notification.svg";
 import { ReactComponent as TickIcon } from "./tick.svg";
 import SampleProductImage from "./sampleProductImage.png";
 import SampleProfileImg from "./profileIcon.svg";
@@ -21,6 +22,7 @@ export {
   ArewaCentralPNG,
   CardsPaymentMethod,
   SampleProductImage,
+  NotificationIcon,
   LoginIcon,
   StarIcon,
   SampleProfileImg,
