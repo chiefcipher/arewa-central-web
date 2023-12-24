@@ -16,6 +16,7 @@ import { FormMessage } from "../../atoms/formMessage/formMessage";
 import { NigerianStates } from "../../../shared/NigerianStates";
 import { updateBankInfoSchema } from "../../../validations/profile";
 import { NigerianBanks } from "../../../shared/assets/NigerianBanks";
+import { Seo } from "../../atoms/seo/seo";
 
 export function Profile(): React.ReactElement {
   const fileInputRef = useRef(null);
@@ -132,6 +133,7 @@ export function Profile(): React.ReactElement {
     !hasEditedProfile ? setHasEditedProfile(true) : null;
   return (
     <div className={styles.profile}>
+      <Seo title="Profile" description="User profile" />
       <SectionHeader>Profile </SectionHeader>
 
       <div className={styles.wrapper}>

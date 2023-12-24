@@ -9,12 +9,14 @@ import { Link } from "react-router-dom";
 import { CartItem } from "../../atoms/cartItem/cartItem";
 import { Icon } from "@iconify/react";
 import { E_Pages } from "../../../typescript/enums";
+import { Seo } from "../../atoms/seo/seo";
 export function Cart() {
   const sampleCartItems = [sampleProduct, sampleProduct, sampleProduct];
   const total = 90000;
   // todo total and smaple items comes from api
   return (
     <div className={styles.cart}>
+      <Seo title="Cart" description="Cart items" />
       <SubSectionHeader>Items added to cart</SubSectionHeader>
       <SectionHeader>Cart Items ({sampleCartItems.length})</SectionHeader>
       <div className={styles.totalWrapper}>

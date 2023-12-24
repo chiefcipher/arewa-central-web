@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { SignUpFormOne } from "../../molecules/signUpFormOne/signUpFormOne";
 import { SignUpPersonalInfo } from "../../molecules/signUpPersonalInfo/signUpPersonalInfo.module";
 import { SignUpResidencyInfo } from "../../molecules/signUpResidencyInfo/signUpResidencyInfo.module";
+import { Seo } from "../../atoms/seo/seo";
 
 export function SignUp() {
   const [signUpData, setSignUpData] = useState({
@@ -20,6 +21,7 @@ export function SignUp() {
   });
   return (
     <SignUpContext.Provider value={{ signUpData, setSignUpData }}>
+      <Seo title="Sign up" description="Create Account" />
       <Routes>
         <Route path="/" element={<SignUpFormOne />} />
         <Route path="/personal-info" element={<SignUpPersonalInfo />} />

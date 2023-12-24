@@ -8,9 +8,11 @@ import { Link } from "react-router-dom";
 import { E_Pages } from "../../../typescript/enums";
 import { CardsPaymentMethod } from "../../../shared/assets";
 import { Icon } from "@iconify/react";
+import { Seo } from "../../atoms/seo/seo";
 export const Checkout: React.FC = () => {
   return (
     <div className={styles.checkout}>
+      <Seo title="Checkout" description="Checkout and process payment" />
       <SectionHeader>Checkout</SectionHeader>
       <div className={styles.wrapper}>
         <div className={styles.orderSummary}>
