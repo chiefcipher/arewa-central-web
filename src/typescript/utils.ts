@@ -28,3 +28,24 @@ export function copyToClipboard(text: string) {
     fallBackCopyToClipboard(text);
   }
 }
+
+const months = [
+  "Jan",
+  "Feb",
+  "March",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+export function formatDate(dateNum: number) {
+  // returns date in 24 Dec 2023 format
+  // dateNum is utc date as in Date.now()
+  const date = new Date(dateNum);
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()} `;
+}
