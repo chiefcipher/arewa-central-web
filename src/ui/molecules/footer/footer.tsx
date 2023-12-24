@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./userDashboardFooter.module.scss";
+import styles from "./footer.module.scss";
 import { E_Pages } from "../../../typescript/enums";
 import { Link } from "react-router-dom";
 import { ArewaCentralPNG, ArewaCentralWEBP } from "../../../shared/assets";
-export function UserDashboardFooter() {
+export function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.top}>

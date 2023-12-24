@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./userDashboardNav.module.scss";
+import styles from "./navigation.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { E_Hidden, E_Pages } from "../../../typescript/enums";
 import {
@@ -13,7 +13,7 @@ import {
 } from "../../../shared/assets";
 import { Icon } from "@iconify/react";
 
-export function UserDashboardNav() {
+export function Navigation() {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem(E_Hidden.tokenName) || "some text";
@@ -65,6 +65,13 @@ export function UserDashboardNav() {
               <CarIcon />
               <span>Orders</span>{" "}
             </button>
+            <button
+              className={styles.profileBtn}
+              onClick={() => navigate(E_Pages.notification)}
+            >
+              <Icon icon="iconamoon:notification-fill" />
+              <span>Notifications</span>{" "}
+            </button>
           </>
         ) : (
           <button
@@ -101,16 +108,19 @@ export function UserDashboardNav() {
           <Link to={E_Pages.privacy_policy}>Privacy Policy </Link>
           <Link to={E_Pages.help}>Help </Link> */}
           <Link to={E_Pages.orders} onClick={handleLinkClick}>
-            Orders{" "}
+            Orders
           </Link>
           <Link to={E_Pages.login} onClick={handleLinkClick}>
-            Login{" "}
+            Login
           </Link>
           <Link to={E_Pages.profile} onClick={handleLinkClick}>
-            Account{" "}
+            Account
           </Link>
           <Link to={E_Pages.cart} onClick={handleLinkClick}>
-            Cart{" "}
+            Cart
+          </Link>
+          <Link to={E_Pages.notification} onClick={handleLinkClick}>
+            Notification{" "}
           </Link>
         </p>
       </div>

@@ -5,8 +5,11 @@ export enum E_Pages {
   profile = "/profile",
   cart = "/cart",
   orders = "/orders",
+  notification = "/notification",
   checkout = "/checkout",
   // dashboard = "/dashboard",
+  trackOrder = "/track-order",
+
   home = "/",
   about = "/about",
   contact = "/contact",
@@ -15,7 +18,6 @@ export enum E_Pages {
   terms = "/terms",
   privacy_policy = "/privacy-policy",
   help = "/help",
-  trackOrder = "/track-order",
 }
 
 export enum E_Hidden {

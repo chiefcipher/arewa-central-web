@@ -1,8 +1,8 @@
 import React from "react";
 import { UserDashboardTop } from "../../molecules/userDashboardTop/userDashboardTop";
-import { UserDashboardNav } from "../../molecules/userDashboardNav/userDashboardNav";
+import { Navigation } from "../../molecules/navigation/navigation";
 import { Outlet } from "react-router-dom";
-import { UserDashboardFooter } from "../../molecules/userDashboardFooter/userDashboardFooter";
+import { Footer } from "../../molecules/footer/footer";
 import { Seo } from "../../atoms/seo/seo";
 export function UserDashboard() {
   // for logged in users
@@ -11,10 +11,10 @@ export function UserDashboard() {
     <>
       <Seo title="Arewa Cental" description="Dashboard" />
       <UserDashboardTop />
-      <UserDashboardNav />
+      <Navigation />
 
       <Outlet />
-      <UserDashboardFooter />
+      <Footer />
     </>
   );
 }
