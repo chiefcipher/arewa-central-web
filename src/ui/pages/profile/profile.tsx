@@ -60,9 +60,6 @@ export function Profile(): React.ReactElement {
 
     const maxFileSizeInBytes = 1 * 1024 * 1024; // 1MB
     if (!file) return;
-    // TODO ASYNC STATUS FOR UPLOADING IMAGE
-    // TODO RESPONSIVE NESS
-    // TODO ADD NOTIFICATIO UI SO THE USER CAN SEE MESSAGES
     if (file && file.size > maxFileSizeInBytes) {
       setProfileImg("");
       return alert("File too large, pick another less than 1MB");
