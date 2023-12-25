@@ -100,7 +100,6 @@ export function ProductDetailedPage() {
           content: "valid inputs, adding to cart...",
         });
       }
-      //  TODO ADD LOG  IC TO ADD TO CART
       // todo we are sending this data to our cart api rather
       // simulate api
       setTimeout(() => {

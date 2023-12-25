@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./userDashboardCategoryProducts.module.scss";
+import styles from "./categoryProducts.module.scss";
 import { Product } from "../../atoms/product/product";
 import { I_Product } from "../../../typescript/interfaces";
 import { useParams } from "react-router-dom";
@@ -7,7 +7,8 @@ import { Pagination } from "../../atoms/pagination/pagination";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { ErrorUI } from "../../atoms/errorUI/errorUI";
 import { sampleProduct } from "../../../shared/sampleProduct";
-export function UserDashboardCategoryProducts() {
+export function CategoryProducts() {
+  // randes /:category
   const pageSize = 24;
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { category } = useParams();
@@ -25,7 +26,6 @@ export function UserDashboardCategoryProducts() {
   }, [isLoading]);
   console.log(isLoading);
 
-  // TODO add error ui
   console.log(currentPage);
   return (
     <div className={styles.products}>

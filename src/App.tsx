@@ -10,7 +10,7 @@ import { UserDashboard } from "./ui/pages/userDashboard/userDashboard";
 import { UserDashboardPopularProducts } from "./ui/molecules/userDashboardPopularProducts/userDashboardPopularProducts";
 import { UserDashboardNewProducts } from "./ui/molecules/userDashboardNewProducts/userDashboardNewProducts";
 import { UserDashboardHighestRatedProducts } from "./ui/molecules/userDashboardHighestRatedProducts/userDashboardHighestRatedProducts";
-import { UserDashboardCategoryProducts } from "./ui/molecules/userDashboardCategoryProducts/userDashboardCategoryProducts";
+import { CategoryProducts } from "./ui/molecules/categoryProducts/categoryProducts";
 import { ErrorUI } from "./ui/atoms/errorUI/errorUI";
 import { ProductDetailedPage } from "./ui/molecules/productDetailedPage/productDetailedPage";
 import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
@@ -37,7 +37,7 @@ function App() {
             </>
           }
         />
-        <Route path="/:category" element={<UserDashboardCategoryProducts />} />
+        <Route path="/:category" element={<CategoryProducts />} />
         <Route
           path="/:category/:productSlug/*"
           element={<ProductDetailedPage />}

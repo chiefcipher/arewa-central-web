@@ -53,24 +53,31 @@ export function Navigation() {
         {isLoggedIn ? (
           <>
             <button
-              className={styles.profileBtn}
+              className={styles.nav__ctaBtn}
               onClick={() => navigate(E_Pages.profile)}
             >
               <ProfileIcon />
               <span>Account</span>{" "}
             </button>
             <button
-              className={styles.profileBtn}
+              className={styles.nav__ctaBtn}
               onClick={() => navigate(E_Pages.orders)}
             >
               <CarIcon />
               <span>Orders</span>{" "}
             </button>
             <button
-              className={styles.profileBtn}
+              className={styles.nav__ctaBtn}
               onClick={() => navigate(E_Pages.notification)}
             >
               <NotificationIcon /> <span>Notifications</span>{" "}
+            </button>
+            <button
+              className={styles.nav__ctaBtn}
+              onClick={() => navigate(E_Pages.cart)}
+            >
+              <CartIcon />
+              <span>Cart</span>{" "}
             </button>
           </>
         ) : (
@@ -82,13 +89,7 @@ export function Navigation() {
             <span>Sign in</span>{" "}
           </button>
         )}
-        <button
-          className={styles.cartBtn}
-          onClick={() => navigate(E_Pages.cart)}
-        >
-          <CartIcon />
-          <span>Cart</span>{" "}
-        </button>
+
         <p className={styles.linksOnMobile}>
           {/* the below button only shows on mobile view  */}
           <button
