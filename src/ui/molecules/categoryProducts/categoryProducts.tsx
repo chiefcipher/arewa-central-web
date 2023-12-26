@@ -8,7 +8,7 @@ import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { ErrorUI } from "../../atoms/errorUI/errorUI";
 import { sampleProduct } from "../../../shared/sampleProduct";
 export function CategoryProducts() {
-  // randes /:category
+  // handles /:category
   const pageSize = 24;
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { category } = useParams();

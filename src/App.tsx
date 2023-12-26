@@ -20,6 +20,7 @@ import { Checkout } from "./ui/pages/checkout/checkout";
 import { Orders } from "./ui/pages/orders/orders";
 import { Profile } from "./ui/pages/profile/profile";
 import { TrackOrder } from "./ui/pages/trackOrder/trackOrder";
+import { HomePageAd } from "./ui/atoms/adSense/adSense";
 
 function App() {
   const fakeToken = localStorage.getItem(E_Hidden.tokenName) || "some text";
@@ -32,8 +33,11 @@ function App() {
           element={
             <>
               <UserDashboardHighestRatedProducts />
+              <HomePageAd />
               <UserDashboardNewProducts />
+              <HomePageAd />
               <UserDashboardPopularProducts />
+              <HomePageAd />
             </>
           }
         />
